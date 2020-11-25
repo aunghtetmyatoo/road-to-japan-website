@@ -38,6 +38,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/posts') }}">Blog</a>
                         </li>
                         <li class="nav-item">
@@ -46,6 +49,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/applies/create') }}">Apply</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/informations') }}">Information</a>
+                        </li>
+                        @if(Auth::user())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                        </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

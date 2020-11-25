@@ -28,5 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('owner', function($user, $comment) {
             return $user->id == $comment->user_id;
         });
+
+
     }
 }

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ApplyController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\Information\StudentController;
 use App\Http\Controllers\Information\TeacherController;
 
@@ -26,14 +28,17 @@ Route::resource('teachers', TeacherController::class);
 
 Route::resource('students', StudentController::class);
 
+#Information
+
+Route::get('/informations', [InformationController::class, 'index']);
+
+#Dashboard
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
 Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
+    return view('index');
 });
 
 # Comment Routes
